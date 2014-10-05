@@ -24,7 +24,7 @@ describe PeptidesController do
   # Peptide. As you add validations to Peptide, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {id: 1, aseq: 'aoeu', mod_loc: 2}
   end
 
   # This should return the minimal set of values that should be in the session

@@ -12,6 +12,19 @@ describe Peptide do
   it { should validate_presence_of :aseq }
   it { should validate_presence_of :mod_loc }
 
+  context 'in model validations' do
+
+    let(:peptide) { Peptide.new(mod_loc: 1, aseq: aseq) }
+
+    context 'when the aseq includes lowercase letters' do
+      let(:aseq) { 'AAAa' }
+      it 'should raise an error' do
+        ap peptide
+        expect { peptide.save! }.to raise_error
+      end
+    end
+  end
+
 
 end
 

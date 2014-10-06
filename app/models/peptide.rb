@@ -13,7 +13,7 @@ class Peptide < ActiveRecord::Base
   private
 
   def aseq_does_not_contain_lowercase
-    aseq == aseq.ucase
+    aseq == aseq.upcase
   end
 
 end

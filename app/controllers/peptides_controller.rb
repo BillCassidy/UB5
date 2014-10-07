@@ -41,7 +41,7 @@ class PeptidesController < ApplicationController
   # POST /peptides.json
   def create
     @peptide = Peptide.new(params[:peptide])
-    @peptide.aseq.upcase!
+    @peptide.aseq.try(:upcase!)
 
     respond_to do |format|
       if @peptide.save
